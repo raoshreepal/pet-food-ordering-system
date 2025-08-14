@@ -1,0 +1,856 @@
+{% load static %}
+<head>
+  <!--====== Required meta tags ======-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!--====== Title ======-->
+  <title>Pet Craze</title>
+  <!--====== Favicon Icon ======-->
+  <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/svg"  >
+  <!--====== Bootstrap css ======-->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+  <!--====== Line Icons css ======-->
+  <link rel="stylesheet" href="{% static 'css/lineicons.css'%}" >
+  <!--====== Tiny Slider css ======-->
+  <link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}" />
+  <!--====== gLightBox css ======-->
+  <link rel="stylesheet" href="{% static 'css/glightbox.min.css'%} " />
+  <link rel="stylesheet" href="{% static 'style.css'%}" />
+</head>
+<body>
+  <!--====== NAVBAR NINE PART START ======-->
+  <section class="navbar-area navbar-nine">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="{% url 'home' %}">
+              <h3 style="color: white;font-style: italic;">Pet Craze</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
+              aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse sub-menu-bar" id="navbarNine">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="page-scroll active" href="#hero-area">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#Products">Services</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="page-scroll" href="#shopping">Shopping</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+                {% if email %}
+                <li class="nav-item">
+                    <a class="page-scroll" href="#profile">Profile</a>
+                </li>
+            {% endif %}
+              </ul>
+            </div>
+
+            <div class="navbar-btn d-none d-lg-inline-block">
+              <a class="menu-bar" href="#side-menu-left"><i class="lni lni-menu"></i></a>
+            </div>
+          </nav>
+          <!-- navbar -->
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== NAVBAR NINE PART ENDS ======-->
+
+  <!--====== SIDEBAR PART START ======-->
+
+  <div class="sidebar-left">
+    <div class="sidebar-close">
+      <a class="close" href="#close"><i class="lni lni-close"></i></a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-logo">
+        <a href="index.html"> <h3 style="font-style: italic;">Pet Craze</h3></a>
+      </div>
+      <p class="text">The only Place to find everything detialed things related to your pets</p>
+      <!-- logo -->
+      <div class="sidebar-menu">
+        <h5 class="menu-title">Quick Links</h5>
+        <ul>
+            {% if not email %}
+          <li><a href="{% url 'login'%}">Login</a></li>
+          <li><a href="{% url 'registration' %}">Signup</a></li>
+          {% else  %}
+          
+          <li><a href="{% url 'logout'%}">Logout</a></li>
+          {% endif %} 
+        </ul>
+      </div>
+      <!-- menu -->
+      <div class="sidebar-social align-items-center justify-content-center">
+        <h5 class="social-title">Follow Us On</h5>
+        <ul>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar social -->
+    </div>
+    <!-- content -->
+  </div>
+  <div class="overlay-left"></div>
+
+  <!--====== SIDEBAR PART ENDS ======-->
+
+  <!-- Start header Area -->
+  <section id="hero-area" class="header-area header-eight">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="header-content">
+            <h1>Welcome to Pet Craze</h1>
+            <p>
+                  Providing exceptional pet services to enhance the well-being of your furry friends. Our team is dedicated to creating a happy and healthy environment for pets of all kinds.
+            </p>
+            <div class="button">
+              <a href="javascript:void(0)" class="btn primary-btn">Get Started</a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="header-image">
+            <img src="{% static 'images/header/petcraze.jpg'%}" alt="#" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End header Area -->
+
+  <!--====== ABOUT FIVE PART START ======-->
+<section class="about-area about-five">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-12">
+        <div class="about-image-five">
+          <img src="{% static 'images/about/petabout.jpg' %}" alt="about" />
+        </div>
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="about-five-content">
+          <h6 class="small-title text-lg">OUR STORY</h6>
+          <h2 class="main-title fw-bold">Connecting Hearts, Nurturing Lives</h2>
+          <div class="about-five-tab">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-who-tab" data-bs-toggle="tab" data-bs-target="#nav-who"
+                  type="button" role="tab" aria-controls="nav-who" aria-selected="true">Who We Are</button>
+                <button class="nav-link" id="nav-vision-tab" data-bs-toggle="tab" data-bs-target="#nav-vision"
+                  type="button" role="tab" aria-controls="nav-vision" aria-selected="false">Our Vision</button>
+                <button class="nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history"
+                  type="button" role="tab" aria-controls="nav-history" aria-selected="false">Our History</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-who" role="tabpanel" aria-labelledby="nav-who-tab">
+                <p>We are more than just a pet service provider. We are a passionate team dedicated to fostering a
+                  deep connection between pets and their owners. Our commitment goes beyond offering services; it
+                  extends to creating a community that celebrates the joy and companionship that pets bring into our
+                  lives.</p>
+                <p>At [Your Pet Service Name], we believe in the unique bond between humans and animals. Our team
+                  consists of experienced professionals who share a common goal - to enhance the well-being of pets and
+                  enrich the lives of their owners.</p>
+              </div>
+              <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
+                <p>Our vision is to create a world where every pet receives the love, care, and attention it deserves.
+                  We envision a community where pet owners are well-informed, pets are happy and healthy, and the
+                  bond between them grows stronger every day.</p>
+                <p>Through our services, education, and events, we strive to contribute to a society that values and
+                  respects the unique companionship provided by pets.</p>
+              </div>
+              <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+                <p>Established with a love for animals, Pet Craze has a rich history of serving the
+                  community with dedication and passion. Since our inception, we have been on a journey to make a
+                  positive impact on the lives of pets and their owners.</p>
+                <p>Our history is marked by countless tails wagging, happy purrs, and the satisfaction of connecting
+                  pets with caring families. Join us in celebrating our journey and be a part of the next chapter in
+                  our story.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container -->
+</section>
+
+
+  <!--====== ABOUT FIVE PART ENDS ======-->
+
+ <!-- ===== service-area start ===== -->
+<section id="Products" class="services-area services-eight">
+  <!--======  Start Section Title Five ======-->
+  <div class="section-title-five">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="content">
+            <h6>Services</h6>
+            <h2 class="fw-bold">Our Best Services</h2>
+            <p>
+              Explore our comprehensive range of pet services designed to enhance the well-being of your beloved
+              companions. We are dedicated to providing top-notch care, information, and training for all pets.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </div>
+  <!--======  End Section Title Five ======-->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="single-services">
+          <div class="service-icon">
+            <i class="lni lni-capsule"></i>
+          </div>
+          <div class="service-content">
+            <h4>Pet Information</h4>
+            <p>
+              Discover valuable insights into different breeds, behavior, and essential information to ensure the
+              well-being of your pets.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-services">
+          <div class="service-icon">
+            <i class="lni lni-bootstrap"></i>
+          </div>
+          <div class="service-content">
+            <h4>Different Breeds</h4>
+            <p>
+              Learn about the diverse world of pet breeds, their characteristics, and find the perfect companion for
+              your lifestyle.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-services">
+          <div class="service-icon">
+            <i class="lni lni-shortcode"></i>
+          </div>
+          <div class="service-content">
+            <h4>Pet Health & Care</h4>
+            <p>
+              Ensure the well-being of your pets with expert advice on health, nutrition, grooming, and overall care.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-services">
+          <div class="service-icon">
+            <i class="lni lni-dashboard"></i>
+          </div>
+          <div class="service-content">
+            <h4>Training for Pet</h4>
+            <p>
+              Enroll your pets in our specialized training programs designed to enhance their behavior and foster a
+              strong bond with you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-services">
+          <div class="service-icon">
+            <i class="lni lni-layers"></i>
+          </div>
+          <div class="service-content">
+            <h4>Services for Pet</h4>
+            <p>
+              From grooming to boarding, our range of services ensures that your pets receive the attention and care
+              they deserve.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-services">
+          <div class="service-icon">
+            <i class="lni lni-reload"></i>
+          </div>
+          <div class="service-content">
+            <h4>Pet Events & News</h4>
+            <p>
+              Stay updated with the latest pet events and news. Join our community and celebrate the joy of having
+              pets in your life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== service-area end ===== -->
+ <!-- Start Pricing  Area -->
+  <section id="shopping" class="pricing-area pricing-fourteen">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Shopping</h6>
+              <h2 class="fw-bold">Products you love</h2>
+              <p>
+               We have a larege variets in Pets accessoris,food and thier clothes
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="pricing-style-fourteen">
+            <div class="table-head">
+              <h6 class="title">Pet Items</h4>
+                <p>   Find the perfect items for your furry friends in our collection of pet clothes, pet foods, and accessories. Spoil your pets with the best!
+ </p>
+                <div class="price">
+                  <h2 class="amount">
+                    <span class="currency">Pet</span><span class="duration">Items</span>
+                  </h2>
+                </div>
+            </div>
+
+            <div class="light-rounded-buttons">
+              <a href="javascript:void(0)" class="btn primary-btn-outline">
+                 Shop Now
+              </a>
+            </div>
+
+            <div class="table-content">
+                 <ul class="table-list">
+              <li> <i class="lni lni-checkmark-circle"></i> In-depth Breed Information</li>
+              <li> <i class="lni lni-checkmark-circle"></i> Pet Care Guides</li>
+              <li> <i class="lni lni-checkmark-circle deactive"></i> Training Tips</li>
+              <li> <i class="lni lni-checkmark-circle deactive"></i> Latest Pet Trends</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="pricing-style-fourteen middle">
+            <div class="table-head">
+              <h6 class="title">Pet Clothes</h4>
+                <p>Shop stylish and comfortable clothes for your pets to keep them looking adorable and cozy.</p>
+                <div class="price">
+                  <h2 class="amount">
+                    <span class="currency">Pet</span><span class="duration">Clothes</span>
+                  </h2>
+                </div>
+            </div>
+
+            <div class="light-rounded-buttons">
+              <a href="javascript:void(0)" class="btn primary-btn">
+            Shop Now
+              </a>
+            </div>
+
+            <div class="table-content">
+              <ul class="table-list">
+                            <li> <i class="lni lni-checkmark-circle"></i> Trendy Pet Outfits</li>
+              <li> <i class="lni lni-checkmark-circle"></i> Comfortable Apparel</li>
+              <li> <i class="lni lni-checkmark-circle"></i> Seasonal Collections</li>
+              <li> <i class="lni lni-checkmark-circle deactive"></i> Exclusive Designs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="pricing-style-fourteen">
+            <div class="table-head">
+              <h6 class="title">Pet Foods</h4>
+                <p>Choose from our selection of nutritious and delicious pet foods to keep your pets healthy and satisfied.</p></p>
+                <div class="price">
+                  <h2 class="amount">
+                    <span class="currency">Pet</span><span class="duration">Food</span>
+                  </h2>
+                </div>
+            </div>
+
+            <div class="light-rounded-buttons">
+              <a href="javascript:void(0)" class="btn primary-btn-outline">
+               Shop Now
+              </a>
+            </div>
+
+            <div class="table-content">
+              <ul class="table-list">
+                            <li> <i class="lni lni-checkmark-circle"></i> High-Quality Ingredients</li>
+              <li> <i class="lni lni-checkmark-circle"></i> Nutrient-Rich Formulas</li>
+              <li> <i class="lni lni-checkmark-circle"></i> Specialized Diets</li>
+              <li> <i class="lni lni-checkmark-circle"></i> Vet-Approved Options</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ End Pricing  Area --> 
+
+  <!-- Start Cta Area -->
+  <section id="call-action" class="call-action">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-9">
+                <div class="inner-content">
+                    <h2>Discover Pet Joy with Pet Craze!</h2>
+                    <p>
+                        At Pet Craze, we're passionate about creating perfect solutions for your furry companions.
+                        Whether it's pampering your pets, finding the right products, or getting expert advice,
+                        we're here to make their world delightful and full of joy.
+                    </p>
+                    <div class="light-rounded-buttons">
+                        <a href="/services" class="btn primary-btn-outline">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- End Cta Area -->
+
+
+
+  <!-- Start Latest News Area -->
+  <div id="blog" class="latest-news-area section">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>latest Pets news</h6>
+              <h2 class="fw-bold">Discover Pet Stories & Updates</h2>
+              <p>
+                Stay updated with the latest happenings in the pet world. Find interesting articles, tips,
+                            and heartwarming stories about our furry friends.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- Single News -->
+          <div class="single-news">
+            <div class="image">
+              <a href="javascript:void(0)"><img class="thumb" src="{% static 'images/blog/dog.jpg' %}" alt="Blog" /></a>
+              <div class="meta-details">
+                <img class="thumb" src="{% static 'images/blog/b6.jpg' %}" alt="Author" />
+                <span>BY PET EXPERT</span>
+              </div>
+            </div>
+            <div class="content-body">
+              <h4 class="title">
+                <a href="javascript:void(0)">10 Tips for a Happy and Healthy Pet Life</a>
+              </h4>
+              <p>
+                Explore ways to enhance your pet's well-being and ensure they lead a joyful and healthy life.
+              </p>
+            </div>
+          </div>
+          <!-- End Single News -->
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- Single News -->
+          <div class="single-news">
+            <div class="image">
+              <a href="javascript:void(0)"><img class="thumb" src="{% static 'images/blog/social.jpg'%} " alt="Blog" /></a>
+              <div class="meta-details">
+                <img class="thumb" src="{% static 'images/blog/b6.jpg'%}" alt="Author" />
+                <span>BY PET EXPERT</span>
+              </div>
+            </div>
+            <div class="content-body">
+              <h4 class="title">
+                <a href="javascript:void(0)">
+                Tips for Socializing Your New Pet
+                </a>
+              </h4>
+              <p>
+                Get expert advice on how to help your new pet socialize and adapt to its new home..
+              </p>
+            </div>
+          </div>
+          <!-- End Single News -->
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- Single News -->
+          <div class="single-news">
+            <div class="image">
+              <a href="javascript:void(0)"><img class="thumb" src="{% static 'images/blog/vacc.jpg'%}" alt="Blog" /></a>
+              <div class="meta-details">
+                <img class="thumb" src="{% static 'images/blog/b6.jpg'%}" alt="Author" />
+                <span>BY PET EXPERT</span>
+              </div>
+            </div>
+            <div class="content-body">
+              <h4 class="title">
+                <a href="javascript:void(0)">
+                Essential Vaccinations Every Pet Owner Should Know About
+                </a>
+              </h4>
+              <p>
+                  Stay informed about the essential vaccinations required to keep your pet healthy and protected from common diseases.
+              </p>
+            </div>
+          </div>
+          <!-- End Single News -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Latest News Area -->
+
+  <!-- ========================= contact-section start ========================= -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <div class="contact-item-wrapper">
+            <div class="row">
+              <div class="col-12 col-md-6 col-xl-12">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="lni lni-phone"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h4>Contact</h4>
+                    <p>0984537278623</p>
+                    <p>yourmail@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-12">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="lni lni-map-marker"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h4>Address</h4>
+                    <p>175 5th Ave, New York, NY 10010</p>
+                    <p>United States</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-12">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="lni lni-alarm-clock"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h4>Schedule</h4>
+                    <p>24 Hours / 7 Days Open</p>
+                    <p>Office time: 10 AM - 5:30 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8">
+          <div class="contact-form-wrapper">
+            <div class="row">
+              <div class="col-xl-10 col-lg-8 mx-auto">
+                <div class="section-title text-center">
+                  <span> FeedBack </span>
+                  <h2>
+                    Support Us to send Feedback
+                  </h2>
+                  <p>
+                  We are always here to update you to relavant information to your Pets 
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <form  class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" name="name" id="contact_name" placeholder="Name" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" id="contact_email" placeholder="Email" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" name="phone" id="contact_phone" placeholder="Phone" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="subject" id="contact_subject" placeholder="Subject" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <textarea name="message" id="contact_message" placeholder="Type Message" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="button text-center rounded-buttons">
+                    <button type="submit" id="contact_form" class="btn primary-btn rounded-full">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <script>
+                document.getElementById("contact_form").addEventListener("click", function(event){
+                    event.preventDefault()
+                    let contact_name = document.getElementById('contact_name').value;
+                    let contact_email = document.getElementById('contact_email').value;
+                    let contact_phone = document.getElementById('contact_phone').value;
+                    let contact_subject = document.getElementById('contact_subject').value;
+                    let contact_message = document.getElementById('contact_message').value;
+
+                    let formData = {
+                        name : contact_name,
+                        email : contact_email,
+                        contact : contact_phone,
+                        subject : contact_subject ,
+                        message : contact_message
+                    }
+                    //alert(json_data.message)
+                    fetch('/feedback/', {
+                        method : 'POST',
+                        body : JSON.stringify(formData)
+                    }).then(data => data.json())
+                    .then(json_data => {
+                        alert(json_data.message)
+                    })
+                    .catch(error => alert(error));
+                    
+                    
+
+                  }); 
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+</sectio>
+  <!-- ========================= contact-section end ========================= -->
+
+<!-- user profiles section -->
+   {% if email %}
+   <div id="profile" class="latest-news-area section">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>user profile</h6>
+             
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-1">
+            
+            <p style="margine-left:150px" >Records Associated with <strong> {{ request.session.email }}</strong></p>
+              
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="background-color: white; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                    {% for record in records %}
+                       <Strong >Name: </Strong><u>{{ record.Full_name }}</u><br>
+                       <Strong >Email:</Strong><u>{{ record.Email }}</u><br>
+                       <Strong >Pet :</Strong><u>{{ record.Animal_name }}</u><br>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Latest News Area -->
+
+            {% endif %}
+<!-- user profile sextion end-->
+  <!-- Start Footer Area -->
+  <footer class="footer-area footer-eleven">
+    <!-- Start Footer Top -->
+    <div class="footer-top">
+      <div class="container">
+        <div class="inner-content">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget f-about">
+                <div class="logo">
+                  <a href="index.html">
+                    <h3 style="font-style: italic;">Pet Craze</h3>
+                  </a>
+                </div>
+                <p>
+                 Pet Craze and thier stories 
+              
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-2 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget f-link">
+                <h5>Shopping</h5>
+                <ul>
+                  <li><a href="javascript:void(0)">Pet Market</a></li>
+                  <li><a href="javascript:void(0)">Pet accessories</a></li>
+                  <li><a href="javascript:void(0)">Pet clothes</a></li>
+                  <li><a href="javascript:void(0)">Pet foods</a></li>
+                </ul>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-2 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget f-link">
+                <h5>Services</h5>
+                <ul>
+                  <li><a href="javascript:void(0)">Health&care</a></li>
+                  <li><a href="javascript:void(0)">Training</a></li>
+                  <li><a href="javascript:void(0)">Bathings and hair cutting</a></li>
+                  <li><a href="javascript:void(0)">Breeds</a></li>
+                </ul>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget newsletter">
+                <h5>Pet Craze</h5>
+                <p>Your Pet is our Pet</p>
+                <form action="#" method="get" target="_blank" class="newsletter-form">
+                  <input name="EMAIL" placeholder="Email address" required="required" type="email" />
+                  <div class="button">
+                    <button class="sub-btn">
+                      <i class="lni lni-envelope"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Footer Top -->
+  </footer>
+  <!--/ End Footer Area -->
+
+  
+
+  <a href="#" class="scroll-top btn-hover">
+    <i class="lni lni-chevron-up"></i>
+  </a>
+
+  <!--====== js ======-->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/glightbox.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/tiny-slider.js' %}"></script>
+  
+
+  <script>
+
+    //===== close navbar-collapse when a  clicked
+    let navbarTogglerNine = document.querySelector(
+      ".navbar-nine .navbar-toggler"
+    );
+    navbarTogglerNine.addEventListener("click", function () {
+      navbarTogglerNine.classList.toggle("active");
+    });
+
+    // ==== left sidebar toggle
+    let sidebarLeft = document.querySelector(".sidebar-left");
+    let overlayLeft = document.querySelector(".overlay-left");
+    let sidebarClose = document.querySelector(".sidebar-close .close");
+
+    overlayLeft.addEventListener("click", function () {
+      sidebarLeft.classList.toggle("open");
+      overlayLeft.classList.toggle("open");
+    });
+    sidebarClose.addEventListener("click", function () {
+      sidebarLeft.classList.remove("open");
+      overlayLeft.classList.remove("open");
+    });
+
+    // ===== navbar nine sideMenu
+    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
+
+    sideMenuLeftNine.addEventListener("click", function () {
+      sidebarLeft.classList.add("open");
+      overlayLeft.classList.add("open");
+    });
+
+    //========= glightbox
+    GLightbox({
+      'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+      'type': 'video',
+      'source': 'youtube', //vimeo, youtube or local
+      'width': 900,
+      'autoplayVideos': true,
+    });
+
+  </script>
+</body>
+
